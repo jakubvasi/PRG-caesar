@@ -75,9 +75,9 @@ def desifruj(text, klic):
     posun = -abeceda.index(klic)
     sifra = abeceda[posun:] + abeceda[:posun]
     for x in text:
-        try:
+        if x in abeceda:
             text2 += sifra[abeceda.index(x)]
-        except ValueError:
+        else:
             text2 += x
     return(text2)
 
